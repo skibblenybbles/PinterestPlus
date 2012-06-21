@@ -146,7 +146,7 @@ The supported `data-*` attributes for the HTML5 syntax are:
 * `data-image`: **(required)** the URL of the image you want to Pin. This should not be URI-encoded either.
 * `data-layout`: (optional) one of `"none"`, `"vertical"` or `"horizontal"`.
 * `data-title`: (optional) the title to post with your Pin. Be especially careful to escape quote characters if you're generating these server-side.
-* `data-description`: (optional) the description to post with your Pin. Again, be careful with HTML entity quoting.
+* `data-description`: (optional) the description to post with your Pin. Again, be careful with HTML entity escaping.
 * `data-always-show-count`: (optional) this is not mentioned on the Pinterest site, but it is part of the minified JavaScript options. For best results, leave this attribute out.
 
 ## Should I use this?
