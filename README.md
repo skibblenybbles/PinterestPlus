@@ -182,7 +182,7 @@ Some other reasons:
     * using `getElementsByClassName()` instead of `getElementsByTagName()` in supporting browsers.
     * avoiding non-native function call overheads inside of the DOM node processing loops.
 
-I also wanted to have an HTML5-valid syntax similar to the one used for the Google Plus button. The `pinterst-plus-html5.min.js` script is configurable for developers who would like to use almost any alternative Pinterest button syntax imagine. If you would still like to use the standard `<a>` tag with an `<img>` tag inside approach, you can accomplish this by setting `window.___pinconfig.nodetype` to `"a"`.
+I also wanted to have an HTML5-valid syntax similar to the one used for the Google Plus button. The `pinterst-plus-html5.min.js` script is configurable for developers who would like to use almost any imaginable, pre-parsed Pinterest button syntax. If you would still like to use the standard "`<a>` tag with an `<img>` tag inside" approach, you can accomplish this by setting `window.___pinconfig.nodetype` to `"a"`.
 
 ## A note on style
 
