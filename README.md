@@ -138,7 +138,7 @@ After either script has loaded, you can call `PinterestPlus.pinit()`, optionally
 
 ## HTML5 data attributes
 
-The HTML5 syntax supported by the `pinterest-plus-html5.min.js` script may simplify some things for you if you need to generate Pinterest buttons on the server side. You do not need to worry about URI-encoding the `url` and `media` parameters that would normally go in the query string of a traditional Pinterest `<a>` tag. Rather, you just specify these directly in the `data-url` and `data-image` tag attributes, respectively. However, to be a good Web citizen, you should still take care to escape the usual HTML entity characters such as "&amp;" with `&amp;amp;` and so on.
+The HTML5 syntax supported by the `pinterest-plus-html5.min.js` script may simplify some things for you if you need to generate Pinterest buttons on the server side. You do not need to worry about URI-encoding the `url` and `media` parameters that would normally go in the query string of a traditional Pinterest `<a>` tag. Rather, you just specify these directly in the `data-url` and `data-image` tag attributes, respectively. However, to be a good Web citizen, you should still take care to escape the usual HTML entity characters such as "&" with `&amp;` and so on.
 
 The supported `data-*` attributes for the HTML5 syntax are:
 
