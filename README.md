@@ -151,7 +151,7 @@ The supported `data-*` attributes for the HTML5 syntax are:
 
 ## Should I use this?
 
-This is not officially supported by Pinterest in any capacity, so use it at your own risk. The Pinterest API is likely to change over time, so using their CDN-hosted `pinit.js` script is much safer for production work that you do not monitor closely. These scripts work as of my last commit in current versions of Chrome, Safari and Firefox, but I can make no guarantees about its future viability. Hopefully, Pinterest will incorporate similar functionality into their JavaScript APIs.
+This is not officially supported by Pinterest in any capacity, so use it at your own risk. The Pinterest API is likely to change over time, so using their CDN-hosted `pinit.js` script is much safer for production work that you do not monitor closely. These scripts work as of my last commit in current versions of Chrome, Safari and Firefox, but I can make no guarantees about their future viability. Hopefully, Pinterest will incorporate similar functionality into their JavaScript APIs.
 
 ## How does this work?
 
