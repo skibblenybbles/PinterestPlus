@@ -6,6 +6,8 @@
         <title>PinterestPlus</title>
         
         <script>
+        // configure PinterestPlus to explicitly parse tags
+        // and set up the callback to perform the parse
         window.___pincfg = {
             parsetags: "explicit",
             onready: function() {
@@ -27,11 +29,12 @@
         </div>
         
         <script type="text/javascript">
+        // load the PinterestPlus script asynchronously
         (function() {
             var s = document.createElement("script"),
                 f = document.getElementsByTagName("script")[0];
             s.async = true;
-            s.src = "pinterest-plus-html5.min.js"; // Note: this should be the location where you host this file
+            s.src = "../pinterest-plus-html5.min.js"; // Note: this should be the location where you host this file
             f.parentNode.insertBefore(s, f);
         })();
         </script>
