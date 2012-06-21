@@ -3,7 +3,15 @@
 // are three underscore characters) configuration value like so :
 //
 // window.___pincfg = {
-//     parsetags: "explicit" // either "explicit" or "onload" (default is "onload")
+//     // when to parse the Pinterest <a> tags
+//     // either "explicit" or "onload"
+//     // (the default is "onload")
+//     parsetags: "explicit"
+//
+//     // specify a function to run once the PinterestPlus
+//     // script has loaded
+//     // (the default is null)
+//     onready: null
 // };
 //
 // If you use "explicit" parsing, you must call PinterestPlus.pinit(<optional DOM element>)
@@ -81,7 +89,10 @@
         layoutRx: /^(none)|(vertical)|(horizontal)$/,
         
         // parse tags on load?
-        parsetags: window.___pincfg.parsetags || "onload"
+        parseTags: window.___pincfg.parsetags || "onload",
+        
+        // run a function once ready?
+        onReady: window.___pincfg.onready || null
     };
     
     // uses element.getElementsByClassName to find Pinterest <a> tags
@@ -346,7 +357,7 @@
     }
     
     // process tags now?
-    if (config.parsetags !== "explicit") {
+    if (config.parseTags !== "explicit") {
         
         pinit();
     }
@@ -355,5 +366,9 @@
     window.PinterestPlus = {
         pinit: pinit
     };
+    
+    // run a callback function?
+    if (config.onReady && typeof(config.onReady) === "function")
+        config.onReady();
     
 })();

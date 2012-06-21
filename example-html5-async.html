@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+        <title>PinterestPlus</title>
+        
+        <script>
+        window.___pincfg = {
+            parsetags: "explicit",
+            onready: function() {
+                PinterestPlus.pinit(document);
+            }
+        }
+        </script>
+        
+    </head>
+    </body>
+        
+        <div style="width:960px; margin: 100px auto;">
+            
+            <p>Here's a Pinterest button using the new HTML5 syntax that the pinterest-plus-html5.min.js script supports:
+            </p>
+            
+            <div class="pin-it-button" data-url="https://github.com/skibblenybbles/PinterestPlus" data-image="http://passets-ec.pinterest.com/images/LogoRed.png" data-description="An improved implementation of the Pinterest &quot;Pin It&quot; button with an HTML5-valid syntax option"></div>
+            
+        </div>
+        
+        <script type="text/javascript">
+        (function() {
+            var s = document.createElement("script"),
+                f = document.getElementsByTagName("script")[0];
+            s.async = true;
+            s.src = "pinterest-plus-html5.min.js"; // Note: this should be the location where you host this file
+            f.parentNode.insertBefore(s, f);
+        })();
+        </script>
+        
+    </body>
+</html>
