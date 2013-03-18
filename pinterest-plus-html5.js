@@ -62,7 +62,7 @@
                 ?
                 "https://assets.pinterest.com/pinit.html"
                 :
-                "http://pinit-cdn.pinterest.com/pinit.html",
+                "http://assets.pinterest.com/pinit.html",
             
             // Pinterest tag attributes to parse
             attrs: {
