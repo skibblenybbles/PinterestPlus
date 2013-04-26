@@ -190,7 +190,7 @@ You may love or hate my JavaScript style. I strive to take my coding advice from
 
 ## License
 
-Copyright (c) 2013, Mike Kibbel
+Copyright (c) 2013, Mike Kibbel  
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
