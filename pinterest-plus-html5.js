@@ -210,6 +210,22 @@
             i,
             j;
 
+        function getAttrDefault(element, attrName) {
+            var defaultValue;
+
+            if (! attrName in attrDefaults) {
+                return null;
+            }
+
+            defaultValue = attrDefaults[attrName]
+
+            if (typeof defaultValue === "function") {
+                return defaultValue(element);
+            }
+
+            return defaultValue;
+        }
+
         i = 0;
         for (lenOuter = elements.length; i < lenOuter; i += 1) {
 
@@ -237,7 +253,7 @@
                 attrName = attrNames[attr];
                 attrValidate = attrValidators[attr];
 
-                attrValue = element.getAttribute(attrName) || null;
+                attrValue = element.getAttribute(attrName) || getAttrDefault(element, attrName);
                 if (attrValue !== null &&
                     (!attrValidate || attrValidate.test(attrValue))
                 ) {
@@ -264,7 +280,7 @@
 
                     attr = attrs[j];
                     attrName = attrNames[attr];
-                    attrDefault = attrDefaults[attr];
+                    attrDefault = getAttrDefault(element, attr);
                     attrValidate = attrValidators[attr];
 
                     attrValue = element.getAttribute(attrName) || attrDefault || null;
