@@ -76,6 +76,20 @@
 
             // attribute defaults
             defaults: {
+                "data-url": function (el) {
+                    var a = el.tagName.toLowerCase() === "a" ? el : el.querySelector("a");
+                    if (a) {
+                        return a.href;
+                    }
+                    return window.location.href;
+                },
+                "data-image": function (el) {
+                    var img = el.tagName.toLowerCase() === "img" ? el : el.querySelector("img");
+                    if (img) {
+                        return img.src;
+                    }
+                    throw new Error("Could not find suitable default for media, please set explicit value");
+                },
                 layout: window.___pincfg.layout || "horizontal"
             },
 
@@ -213,7 +227,7 @@
         function getAttrDefault(element, attrName) {
             var defaultValue;
 
-            if (! attrName in attrDefaults) {
+            if (! attrDefaults.hasOwnProperty(attrName)) {
                 return null;
             }
 
