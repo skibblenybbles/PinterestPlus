@@ -9,11 +9,11 @@ On the command line, `cd` into the directory where you'd like to store the JavaS
 
 Alternatively, [download a zip file](https://github.com/skibblenybbles/PinterestPlus/zipball/master) of the latest source code and unzip it.
 
-On your Web server, you'll need to host either `pinterest-plus.min.js` for the standard Pinterest `<a>` tag buttons or `pinterest-plus-html5.min.js` for HTML5-valid syntax support. Just load the JavaScript file that you'd like to use in a `<script>` tag right before the close of the `<body>` tag of your HTML document. If you'd like to load the script asynchronously, check out the example below.
+On your Web server, you'll need to host either `Pinterest-plus.min.js` for the standard Pinterest `<a>` tag buttons or `Pinterest-plus-html5.min.js` for HTML5-valid syntax support. Just load the JavaScript file that you'd like to use in a `<script>` tag right before the close of the `<body>` tag of your HTML document. If you'd like to load the script asynchronously, check out the example below.
 
 ## HTML example using <a href="http://pinterest.com/about/goodies/#button_for_websites" target="_blank">Pinterest's standard button syntax</a>
 
-Here's an example using Pinterest's button syntax. Note that the path of the `pinterest-plus.min.js` file must correspond to wherever you host it on your server.
+Here's an example using Pinterest's button syntax. Note that the path of the `Pinterest-plus.min.js` file must correspond to wherever you host it on your server.
 
     <!DOCTYPE html>
     <html>
@@ -45,7 +45,7 @@ Here's an example using Pinterest's button syntax. Note that the path of the `pi
 
 ## HTML5 example using new syntax
 
-Here's an example using a new HTML5-valid syntax. Note that the path of the `pinterest-plus-html5.min.js` file must correspond to wherever you host it on your server.
+Here's an example using a new HTML5-valid syntax. Note that the path of the `Pinterest-plus-html5.min.js` file must correspond to wherever you host it on your server.
 
     <!DOCTYPE html>
     <html>
@@ -76,7 +76,7 @@ This was designed to be similar to the Google Plus button syntax. You can see th
 
 ## HTML5 example with asynchronous script loading
 
-Social sharing buttons are notorious for causing long page load times. These kind of problems are easily remedied by loading the required JavaScript files asynchronously. I recommend that you use a JavaScript library method for asynchronous script loading, such as jQuery's `$.getScript(...)` or Dojo's `require(...)`. But, for the sake of demonstration, I've used Google's async script loading code as a starting point to show how to do this with the PinterestPlust script. With a library, you won't need to use the `window.___pincfg.onready` callback hack as you'll see below. Rather, just use the library's callback methodology.
+Social sharing buttons are notorious for causing long page load times. These kinds of problems are easily remedied by loading the required JavaScript files asynchronously. I recommend that you use a JavaScript library method for asynchronous script loading, such as jQuery's `$.getScript(...)` or Dojo's `require(...)`. But, for the sake of demonstration, I've used Google's async script loading code as a starting point to show how to do this with the PinterestPlust script. With a library, you won't need to use the `window.___pincfg.onready` callback hack as you'll see below. Rather, just use the library's callback methodology.
 
     <!DOCTYPE html>
     <html>
@@ -124,7 +124,7 @@ Social sharing buttons are notorious for causing long page load times. These kin
 
 ## Configuration and usage
 
-Taking inspiration from <a href="https://developers.google.com/+/plugins/+1button/#async-load" target="_blank">the Google Plus button</a>, you can configure how `pinterest-plus-html5.min.js` behaves. In the `<head>` of your document, just set the `window.___pincfg` value to a JavaScript object with the following optional properties:
+Taking inspiration from <a href="https://developers.google.com/+/plugins/+1button/#async-load" target="_blank">the Google Plus button</a>, you can configure how `Pinterest-plus-html5.min.js` behaves. In the `<head>` of your document, just set the `window.___pincfg` value to a JavaScript object with the following optional properties:
 
 * `parsetags`: should be set to `"onload"` or `"explicit"` (the default is `"onload"`). If set to `"explicit"`, you will need to manually call `PinterestPlus.pinit()` after the script has loaded to parse the Pinterest button tags.
 * `onready`: should be set to a callback function that does something after the script has loaded. For example, it might call `PinterestPlus.pinit()` like the example above.
@@ -132,13 +132,13 @@ Taking inspiration from <a href="https://developers.google.com/+/plugins/+1butto
 * `classname`: overrides the class name that the script uses to find your Pinterest buttons. The default is `"pin-it-button"`.
 * `layout`: sets the default button layout to override the usual `"horizontal"` setting. The options are `"none"`, `"vertical"` and `"horizontal"`.
 
-You can also configure how the standard syntax `pinterest-plus.min.js` script works, but only `parsetags` and `onready` are supported.
+You can also configure how the standard syntax `Pinterest-plus.min.js` script works, but only `parsetags` and `onready` are supported.
 
 After either script has loaded, you can call `PinterestPlus.pinit()`, optionally passing a DOM node as an argument, to process any new Pinterest buttons on the page (or inside the specified DOM node). This works great if you're loading content with Pinterest buttons via AJAX methods.
 
 ## HTML5 data attributes
 
-The HTML5 syntax supported by the `pinterest-plus-html5.min.js` script may simplify some things for you if you need to generate Pinterest buttons on the server side. You do not need to worry about URI-encoding the `url` and `media` parameters that would normally go in the query string of a traditional Pinterest `<a>` tag. Rather, you just specify these directly in the `data-url` and `data-image` tag attributes, respectively. However, to be a good Web citizen, you should still take care to escape the usual HTML entity characters such as "&" with `&amp;` and so on.
+The HTML5 syntax supported by the `Pinterest-plus-html5.min.js` script may simplify some things for you if you need to generate Pinterest buttons on the server-side. You do not need to worry about URI-encoding the `url` and `media` parameters that would normally go in the query string of a traditional Pinterest `<a>` tag. Rather, you just specify these directly in the `data-url` and `data-image` tag attributes, respectively. However, to be a good Web citizen, you should still take care to escape the usual HTML entity characters such as "&" with `&amp;` and so on.
 
 The supported `data-*` attributes for the HTML5 syntax are:
 
@@ -146,12 +146,12 @@ The supported `data-*` attributes for the HTML5 syntax are:
 * `data-image`: **(required)** the URL of the image you want to Pin. This should not be URI-encoded either.
 * `data-layout`: (optional) one of `"none"`, `"vertical"` or `"horizontal"`.
 * `data-title`: (optional) the title to post with your Pin. Be especially careful to escape quote characters if you're generating these server-side.
-* `data-description`: (optional) the description to post with your Pin. Again, be careful with HTML entity escaping.
+* `data-description`: (optional) the description to post with your Pin. Again, be careful with the HTML entity escaping.
 * `data-always-show-count`: (optional) this is not mentioned on the Pinterest site, but it is part of the minified JavaScript options. For best results, leave this attribute out.
 
 ## Should I use this?
 
-This is not officially supported by Pinterest in any capacity, so use it at your own risk. The Pinterest API is likely to change over time, so using their CDN-hosted `pinit.js` script is much safer for production work that you do not monitor closely. These scripts work as of my last commit in current versions of Chrome, Safari and Firefox, but I can make no guarantees about their future viability. Hopefully, Pinterest will incorporate similar functionality into their JavaScript APIs.
+This is not officially supported by Pinterest in any capacity, so use it at your own risk. The Pinterest API is likely to change over time, so using their CDN-hosted `pinit.js` script is much safer for production work that you do not monitor closely. These scripts work as of my last commit in current versions of Chrome, Safari, and Firefox, but I can make no guarantees about their future viability. Hopefully, Pinterest will incorporate similar functionality into their JavaScript APIs.
 
 ## How does this work?
 
@@ -182,7 +182,7 @@ Some other reasons:
     * using `getElementsByClassName()` instead of `getElementsByTagName()` in supporting browsers.
     * avoiding non-native function call overheads inside of the DOM node processing loops.
 
-I also wanted to have an HTML5-valid syntax similar to the one used for the Google Plus button. The `pinterst-plus-html5.min.js` script is configurable for developers who would like to use almost any imaginable, pre-parsed Pinterest button syntax. If you would still like to use the standard "`<a>` tag with an `<img>` tag inside" approach, you can accomplish this by setting `window.___pinconfig.nodetype` to `"a"`.
+I also wanted to have an HTML5-valid syntax similar to the one used for the Google Plus button. The `Pinterest-plus-html5.min.js` script is configurable for developers who would like to use almost any imaginable, pre-parsed Pinterest button syntax. If you would still like to use the standard "`<a>` tag with a `<img>` tag inside" approach, you can accomplish this by setting `window.___pinconfig.nodetype` to `"a"`.
 
 ## A note on style
 
@@ -190,7 +190,7 @@ You may love or hate my JavaScript style. I strive to take my coding advice from
 
 ## License
 
-Copyright (c) 2013, Mike Kibbel  
+Copyright (c) 2013, Mike Kibble  
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -199,8 +199,7 @@ modification, are permitted provided that the following conditions are met:
 1. Redistributions of source code must retain the above copyright notice, this
    list of conditions and the following disclaimer. 
 2. Redistributions in binary form must reproduce the above copyright notice,
-   this list of conditions and the following disclaimer in the documentation
-   and/or other materials provided with the distribution. 
+   this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. 
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
 ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
